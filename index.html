@@ -1,0 +1,602 @@
+<!doctype html>
+<html lang="en-GB" class="no-js">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AAC4Free: a free talking app for children who communicate with pictures</title>
+  <meta name="description" content="AAC4Free is a free AAC (augmentative and alternative communication) app for iPad. Built for autistic children and anyone who communicates with pictures. No adverts, no subscriptions, no tracking, and it works offline.">
+  <meta name="theme-color" content="#2F6FE4">
+
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="AAC4Free: a free talking app for children who communicate with pictures">
+  <meta property="og:description" content="A full AAC app for iPad, free for good. No adverts, no subscriptions, no tracking, works offline. Made so that every child can have a voice, whatever their family can afford.">
+  <meta property="og:image" content="https://im-that-guy-16.github.io/aac4free-site/assets/img/og-banner.png">
+  <meta property="og:url" content="https://im-that-guy-16.github.io/aac4free-site/">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="icon" type="image/png" href="assets/img/favicon.png">
+  <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/styles.css">
+  <script>document.documentElement.classList.remove('no-js');</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<!-- Shared icons -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="i-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></symbol>
+    <symbol id="i-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
+    <symbol id="i-mail" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="3"/><path d="M4 7l8 6 8-6"/></symbol>
+    <symbol id="i-heart" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20s-7.5-4.6-9.2-9.3C1.7 7.5 4 4.5 7.2 4.5c2 0 3.6 1.1 4.8 2.8 1.2-1.7 2.8-2.8 4.8-2.8 3.2 0 5.5 3 4.4 6.2C19.5 15.4 12 20 12 20z"/></symbol>
+    <symbol id="i-lock" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="4.5" y="10.5" width="15" height="10" rx="2.5"/><path d="M8 10.5V7.5a4 4 0 0 1 8 0v3"/></symbol>
+    <symbol id="i-grow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21v-9"/><path d="M12 12c0-4 3-7 8-7 0 5-3 7-8 7z"/><path d="M12 15c0-3-2.4-5.5-7-5.5 0 4 2.6 5.5 7 5.5z"/></symbol>
+    <symbol id="i-clinic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3v5a4 4 0 0 0 8 0V3"/><path d="M12 12v3a5 5 0 0 0 10 0v-1"/><circle cx="22" cy="12" r="0.01"/><circle cx="21" cy="12" r="2"/></symbol>
+    <symbol id="i-ipad" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="2.5" y="4.5" width="19" height="15" rx="2.5"/><path d="M11 16.5h2"/></symbol>
+    <symbol id="i-share" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="12" r="2.5"/><circle cx="18" cy="6" r="2.5"/><circle cx="18" cy="18" r="2.5"/><path d="M8.2 10.8l7.6-3.6M8.2 13.2l7.6 3.6"/></symbol>
+    <symbol id="i-chat" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 12.5a7.5 7.5 0 0 1-11 6.6L4 20l1-4.3A7.5 7.5 0 1 1 20 12.5z"/></symbol>
+    <symbol id="i-school" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 9l10-5 10 5-10 5z"/><path d="M6 11v5c2 2 10 2 12 0v-5"/><path d="M22 9v6"/></symbol>
+    <symbol id="i-home" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l9-7 9 7"/><path d="M5 9.5V20h14V9.5"/><path d="M10 20v-5h4v5"/></symbol>
+    <symbol id="i-shield" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 3v6c0 4.5-3.4 8-8 9-4.6-1-8-4.5-8-9V6z"/><path d="M8.5 12l2.5 2.5 4.5-5"/></symbol>
+  </defs>
+</svg>
+
+<header class="header" id="top">
+  <div class="wrap">
+    <a class="brand" href="#top" aria-label="AAC4Free home">
+      <img src="assets/img/icon.png" alt="" width="40" height="40">
+      AAC4Free
+    </a>
+    <button class="menu-btn" aria-expanded="false" aria-controls="nav" aria-label="Open menu">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+    </button>
+    <nav class="nav" id="nav" aria-label="Main">
+      <a href="#story">Our story</a>
+      <a href="#aims">Aims</a>
+      <a href="#features">Features</a>
+      <a href="#professionals">For professionals</a>
+      <a href="#privacy">Privacy</a>
+      <a href="#faq">FAQ</a>
+      <a class="btn btn-primary" href="#get-involved">Get involved</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div class="hero-copy">
+        <div class="status"><span class="dot" aria-hidden="true"></span>In pre-release testing for iPad</div>
+        <h1>A voice for every child, <span class="hl">whatever their family can afford.</span></h1>
+        <p class="lead">AAC4Free is a complete picture-talking app for iPad, made for autistic children and anyone who communicates with pictures. A child taps picture cards to build a sentence, and the iPad speaks it aloud.</p>
+        <div class="hero-ctas">
+          <a class="btn btn-primary" href="#features">See what it does <svg aria-hidden="true"><use href="#i-arrow"/></svg></a>
+          <a class="btn btn-ghost" href="#get-involved">Help us test it</a>
+        </div>
+        <ul class="pills" aria-label="Key promises">
+          <li><svg aria-hidden="true"><use href="#i-check"/></svg>Free forever</li>
+          <li><svg aria-hidden="true"><use href="#i-check"/></svg>No adverts</li>
+          <li><svg aria-hidden="true"><use href="#i-check"/></svg>No subscriptions</li>
+          <li><svg aria-hidden="true"><use href="#i-check"/></svg>No tracking</li>
+          <li><svg aria-hidden="true"><use href="#i-check"/></svg>Works offline</li>
+        </ul>
+      </div>
+
+      <div class="hero-stage reveal">
+        <div class="float-card c1" aria-hidden="true"><img src="assets/symbols/i.png" alt="">I</div>
+        <div class="float-card c2" aria-hidden="true"><img src="assets/symbols/want.png" alt="">want</div>
+        <div class="float-card c3" aria-hidden="true"><img src="assets/symbols/please.png" alt="">please</div>
+        <div class="float-card c4" aria-hidden="true"><img src="assets/symbols/more.png" alt="">more</div>
+        <div class="ipad">
+          <img src="assets/img/home.jpg" width="1600" height="1112" alt="The AAC4Free Home board on an iPad in landscape. The sentence strip at the top reads 'I want drink', above a grid of 40 colour-coded core word picture cards such as I, you, want, like, go, stop, help and more, with a row of board tabs along the bottom.">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Key numbers -->
+  <section class="strip" aria-label="AAC4Free at a glance">
+    <div class="wrap strip-grid">
+      <div><strong>£0</strong><span>now and always</span></div>
+      <div><strong>~480</strong><span>words on 19 ready-made boards</span></div>
+      <div><strong>13,000+</strong><span>ARASAAC symbols to choose from</span></div>
+      <div><strong>2014</strong><span>oldest iPad supported (iPad Air 2)</span></div>
+    </div>
+  </section>
+
+  <!-- Story -->
+  <section class="section" id="story">
+    <div class="wrap story-grid">
+      <div class="story reveal">
+        <span class="eyebrow">Why AAC4Free exists</span>
+        <h2>A voice shouldn't depend on a price tag</h2>
+        <p class="big">The leading AAC apps cost between £150 and £500. For many families, that puts a voice out of reach.</p>
+        <p>Augmentative and alternative communication (AAC) changes lives. It lets a child ask for a drink, say they're hurting, tell a joke, or simply say "I love you". Yet the apps that do this well are some of the most expensive on the App Store. Families on tight budgets, schools stretching every penny and children waiting for funding are too often left without.</p>
+        <p>AAC4Free was built to close that gap. It does the job the leading paid apps do, with the features speech and language therapists expect, and it's free, for good. There are no adverts, no subscriptions, no in-app purchases and no accounts. Nothing a child says ever leaves the iPad.</p>
+        <p>The picture symbols it uses come from ARASAAC under a non-commercial licence, so the app must stay free. That suits us fine: free isn't a trial or a teaser here. It's the point.</p>
+      </div>
+      <div class="price-card reveal" aria-label="Price comparison">
+        <h3>What a child's voice costs</h3>
+        <div class="price-row">
+          <span class="label">Typical paid AAC app</span>
+          <span class="bar paid">£150 to £500</span>
+        </div>
+        <div class="price-row">
+          <span class="label">AAC4Free</span>
+          <span class="bar free">£0</span>
+        </div>
+        <ul class="ticks" style="--c: var(--fk-green)">
+          <li><strong>No in-app purchases</strong> or premium tiers. Every feature is included.</li>
+          <li><strong>No accounts or sign-ups.</strong> Install it and start talking.</li>
+          <li><strong>Runs on older iPads,</strong> so a second-hand or hand-me-down device is enough.</li>
+        </ul>
+        <p class="price-note">Paid app prices are typical UK App Store prices for leading AAC apps.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Aims -->
+  <section class="section white" id="aims">
+    <div class="wrap">
+      <div class="center reveal">
+        <span class="eyebrow">What we're aiming for</span>
+        <h2>Six promises behind every decision</h2>
+        <p class="lead">AAC4Free is designed around what children, families and professionals actually need, not around what can be sold.</p>
+      </div>
+      <div class="aims">
+        <article class="aim reveal" style="--c: var(--fk-green)">
+          <div class="ic"><svg aria-hidden="true"><use href="#i-heart"/></svg></div>
+          <h3>Free, for good</h3>
+          <p>No price, no paywalls and no "pro" version. Every child gets every feature, whatever their family can afford.</p>
+        </article>
+        <article class="aim reveal" style="--c: var(--fk-blue)">
+          <div class="ic"><svg aria-hidden="true"><use href="#i-lock"/></svg></div>
+          <h3>Private by design</h3>
+          <p>No accounts, analytics, adverts or tracking. Everything stays on the iPad, and it works fully offline.</p>
+        </article>
+        <article class="aim reveal" style="--c: var(--fk-orange)">
+          <div class="ic"><svg aria-hidden="true"><use href="#i-grow"/></svg></div>
+          <h3>Grows with the child</h3>
+          <p>Word levels reveal vocabulary in planned stages, and cards never move, so motor plans built today still work tomorrow.</p>
+        </article>
+        <article class="aim reveal" style="--c: var(--fk-purple)">
+          <div class="ic"><svg aria-hidden="true"><use href="#i-chat"/></svg></div>
+          <h3>Familiar to therapists</h3>
+          <p>Core vocabulary, Fitzgerald Key colours, word endings and word forms work the way speech and language therapists already teach.</p>
+        </article>
+        <article class="aim reveal" style="--c: var(--fk-pink)">
+          <div class="ic"><svg aria-hidden="true"><use href="#i-ipad"/></svg></div>
+          <h3>Works on the iPad you have</h3>
+          <p>Runs on iPadOS 15 and later, back to the iPad Air 2 and iPad mini 4, so families don't need new hardware.</p>
+        </article>
+        <article class="aim reveal" style="--c: var(--fk-yellow)">
+          <div class="ic"><svg aria-hidden="true"><use href="#i-share"/></svg></div>
+          <h3>Open, not locked in</h3>
+          <p>Boards import and export in Open Board Format, used by CoughDrop, Grid and others, so a child's words are never trapped.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- How it works + features -->
+  <section class="section" id="features">
+    <div class="wrap">
+      <div class="center reveal">
+        <span class="eyebrow">How it works</span>
+        <h2>Tap, build, speak</h2>
+        <p class="lead">Simple enough for a first communicator, deep enough to grow into full sentences.</p>
+      </div>
+
+      <div class="steps">
+        <div class="step reveal">
+          <h3>Tap a picture</h3>
+          <p>Clear ARASAAC symbols, or your own photos, are laid out on calm, colour-coded boards with large touch targets.</p>
+        </div>
+        <div class="step reveal">
+          <h3>Build a sentence</h3>
+          <p>Each word drops into the sentence strip and is spoken as it's tapped. Folder cards open topic boards, then return home.</p>
+        </div>
+        <div class="step reveal">
+          <h3>The iPad speaks</h3>
+          <p>The most natural voice on the iPad says it aloud, even with the silent switch on. Grown-ups can record their own voice too.</p>
+        </div>
+      </div>
+
+      <div class="showcase">
+
+        <div class="feature reveal" style="--c: var(--fk-blue)">
+          <div class="media">
+            <div class="ipad"><img src="assets/img/word-forms.jpg" width="1600" height="1112" loading="lazy" alt="Holding the 'want' card opens a 'Choose a word' popup with the forms want, wants, wanting and wanted."></div>
+          </div>
+          <div>
+            <span class="tag">Core vocabulary</span>
+            <h3>Real language, not just requests</h3>
+            <p>The Home board holds the core words children use most, following Project Core's Universal Core vocabulary, with around 480 words across 19 boards in UK English: mum, nan, crisps and all.</p>
+            <ul class="ticks">
+              <li><strong>Word forms:</strong> hold a card for want, wants, wanting, wanted; I, me, my, mine; big, bigger, biggest.</li>
+              <li><strong>Word-ending cards</strong> (+s, +ing, +ed, +er, +est), as in LAMP and WordPower. Irregulars work too: go + ed says "went".</li>
+              <li><strong>"a" or "an"</strong> is chosen automatically when a sentence is spoken.</li>
+              <li><strong>Typing page</strong> with word suggestions for children who can spell.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="feature flip reveal" style="--c: var(--fk-orange)">
+          <div class="media">
+            <div class="ipad"><img src="assets/img/feelings.jpg" width="1600" height="1112" loading="lazy" alt="The Feelings board with symbols for happy, sad, angry, scared, tired, sick, hurt, excited, bored, calm, frustrated, silly, worried, hot, cold and confused. The sentence strip reads 'I feel happy'."></div>
+          </div>
+          <div>
+            <span class="tag">Colour coded</span>
+            <h3>The Fitzgerald Key, built in</h3>
+            <p>Cards are outlined in the colour scheme speech and language therapists use, so children learn the shape of a sentence as well as the words. It can be shown as an outline, an outline with a tint, or turned off.</p>
+            <ul class="fk" aria-label="Fitzgerald Key colours">
+              <li><i style="--c: var(--fk-yellow)"></i>People</li>
+              <li><i style="--c: var(--fk-green)"></i>Actions</li>
+              <li><i style="--c: var(--fk-blue)"></i>Describing</li>
+              <li><i style="--c: var(--fk-orange)"></i>Things</li>
+              <li><i style="--c: var(--fk-pink)"></i>Social</li>
+              <li><i style="--c: var(--fk-purple)"></i>Questions</li>
+            </ul>
+            <ul class="ticks">
+              <li><strong>People in symbols</strong> can be shown in five skin tones and seven hair colours, so children see people like themselves.</li>
+              <li><strong>Real photos</strong> of a child's own cup, teddy or school can go on any card.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="feature reveal" style="--c: var(--fk-green)">
+          <div class="media">
+            <div class="ipad"><img src="assets/img/first-then.jpg" width="1600" height="1112" loading="lazy" alt="A First–Then visual schedule showing 'First: school' with a green Done button, an arrow, and 'Then: park'. Below it reads '2 of 6 done'."></div>
+          </div>
+          <div>
+            <span class="tag">Made for autistic children</span>
+            <h3>Predictable, calm and visual</h3>
+            <p>Everything is designed to reduce surprise. Words stay where they are, the design is calm and uncluttered, and routines can be shown visually.</p>
+            <ul class="ticks">
+              <li><strong>Visual schedules:</strong> First–Then, or the whole day with steps to tick off.</li>
+              <li><strong>Hidden cards keep their place.</strong> New words appear without anything moving.</li>
+              <li><strong>Explore mode</strong> lets a child try every word without changing the setup.</li>
+              <li><strong>Speak-now cards</strong> for urgent phrases like "Help!" or "Stop please".</li>
+              <li><strong>A gentle attention bell</strong> so a child can get someone's attention.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="feature flip reveal" style="--c: var(--fk-purple)">
+          <div class="media">
+            <div class="ipad"><img src="assets/img/progress.jpg" width="1600" height="1112" loading="lazy" alt="The Word log and progress screen for the last 30 days, showing totals for words tapped, different words, sentences spoken, words per sentence and the share of words from the core Home board, above a bar chart of words tapped each day that rises over the month."></div>
+          </div>
+          <div>
+            <span class="tag">Evidence for therapy</span>
+            <h3>See progress, share it with the team</h3>
+            <p>An optional word log records words and sentences with the date and time, kept only on the iPad. Grown-ups can view progress at a glance or export it for a speech and language therapist.</p>
+            <ul class="ticks">
+              <li><strong>Progress charts:</strong> words tapped, different words, sentences, words per sentence and core word use, over 7 or 30 days.</li>
+              <li><strong>CSV export</strong> for Excel, Numbers or Google Sheets.</li>
+              <li><strong>Show me where:</strong> search a word and the app lights up each tap that leads to it, so adults can model it.</li>
+            </ul>
+            <p style="font-size:.9rem;color:var(--muted);margin-top:18px">Chart shown with sample data.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Professionals -->
+  <section class="section navy" id="professionals">
+    <div class="wrap">
+      <div class="center reveal">
+        <span class="eyebrow">For the people around the child</span>
+        <h2>Built with therapists, schools and families in mind</h2>
+        <p class="lead">AAC works best when everyone around a child uses it together. AAC4Free gives each of them what they need.</p>
+      </div>
+      <div class="aud-grid">
+        <article class="aud reveal" style="--c: var(--fk-purple)">
+          <div class="ic"><svg aria-hidden="true"><use href="#i-chat"/></svg></div>
+          <h3>Speech and language therapists</h3>
+          <ul>
+            <li><strong>Core vocabulary</strong> with three word levels: first words, core words and all words.</li>
+            <li><strong>Consistent motor planning:</strong> cards never move as vocabulary grows.</li>
+            <li><strong>Fitzgerald Key</strong> colours, word forms and word-ending cards.</li>
+            <li><strong>Word log and progress charts</strong>, exportable as CSV.</li>
+            <li><strong>Visual scene displays</strong> from real photos, for early communicators.</li>
+            <li><strong>Built-in switch scanning</strong>, including auditory scanning and step scanning.</li>
+            <li><strong>Touch settings</strong>: ignore repeated taps, or hold to select.</li>
+          </ul>
+        </article>
+        <article class="aud reveal" style="--c: var(--fk-blue)">
+          <div class="ic"><svg aria-hidden="true"><use href="#i-school"/></svg></div>
+          <h3>Schools and classrooms</h3>
+          <ul>
+            <li><strong>Several children on one iPad</strong>, each with their own boards, photos, settings and word log.</li>
+            <li><strong>No accounts and no data collected</strong>, which keeps data protection simple.</li>
+            <li><strong>Backup and restore</strong> in one file, to move boards between home and school iPads.</li>
+            <li><strong>Print boards</strong> to A4 PDF as a low-tech backup for PE, swimming or a flat battery.</li>
+            <li><strong>Grown-up lock</strong> and support for iPadOS Guided Access.</li>
+            <li><strong>Works offline</strong>, on school Wi-Fi or none at all.</li>
+          </ul>
+        </article>
+        <article class="aud reveal" style="--c: var(--fk-green)">
+          <div class="ic"><svg aria-hidden="true"><use href="#i-home"/></svg></div>
+          <h3>Parents and carers</h3>
+          <ul>
+            <li><strong>A personalised name:</strong> the app becomes "Sam's App" and greets your child.</li>
+            <li><strong>Record your own voice</strong> on any card, or use Apple's Personal Voice.</li>
+            <li><strong>Edit right on the board</strong>: add cards, photos and new boards in minutes.</li>
+            <li><strong>Pronunciations</strong> so the voice says names properly.</li>
+            <li><strong>Favourites</strong> for the words used most, suggested automatically.</li>
+            <li><strong>Light, dark and high contrast</strong> modes, with VoiceOver support.</li>
+          </ul>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Gallery -->
+  <section class="section white" id="gallery">
+    <div class="wrap">
+      <div class="center reveal">
+        <span class="eyebrow">A closer look</span>
+        <h2>Screens from the iPad app</h2>
+        <p class="lead">Tap any screen to see it full size.</p>
+      </div>
+      <div class="gallery">
+        <figure class="reveal">
+          <button type="button" data-full="assets/img/home-dark.jpg" aria-label="View larger: Home board in dark mode">
+            <div class="ipad sm"><img src="assets/img/home-dark.jpg" width="1600" height="1112" loading="lazy" alt="The Home board in dark mode with the sentence 'more play please'."></div>
+          </button>
+          <figcaption><strong>Dark mode</strong>Light, dark or high contrast</figcaption>
+        </figure>
+        <figure class="reveal">
+          <button type="button" data-full="assets/img/food.jpg" aria-label="View larger: Food board">
+            <div class="ipad sm"><img src="assets/img/food.jpg" width="1600" height="1112" loading="lazy" alt="The Food board with symbols including apple, banana, grapes, sandwich, pizza, crisps, toast, cheese, ice cream and cake."></div>
+          </button>
+          <figcaption><strong>Topic boards</strong>Food, drinks, play, people, places and more</figcaption>
+        </figure>
+        <figure class="reveal">
+          <button type="button" data-full="assets/img/settings.jpg" aria-label="View larger: Grown-up settings">
+            <div class="ipad sm"><img src="assets/img/settings.jpg" width="1600" height="1112" loading="lazy" alt="The grown-up Settings panel showing the child, word level set to 'Level 2: Core words', Favourites, Boards and cards, Schedule and Edit on the board itself."></div>
+          </button>
+          <figcaption><strong>Grown-up settings</strong>Locked away from little fingers</figcaption>
+        </figure>
+        <figure class="reveal">
+          <button type="button" data-full="assets/img/home.jpg" aria-label="View larger: Home board">
+            <div class="ipad sm"><img src="assets/img/home.jpg" width="1600" height="1112" loading="lazy" alt="The Home board in light mode with the sentence 'I want drink'."></div>
+          </button>
+          <figcaption><strong>The Home board</strong>40 core words at Level 2</figcaption>
+        </figure>
+        <figure class="reveal">
+          <button type="button" data-full="assets/img/word-forms.jpg" aria-label="View larger: Word forms">
+            <div class="ipad sm"><img src="assets/img/word-forms.jpg" width="1600" height="1112" loading="lazy" alt="The word forms popup for 'want'."></div>
+          </button>
+          <figcaption><strong>Word forms</strong>Hold a card to change tense or number</figcaption>
+        </figure>
+        <figure class="reveal">
+          <button type="button" data-full="assets/img/printed-board.jpg" aria-label="View larger: A printed board">
+            <div class="ipad sm" style="background:#fff;box-shadow:var(--shadow-lg),inset 0 0 0 1px var(--line)"><img src="assets/img/printed-board.jpg" loading="lazy" alt="A board printed as an A4 PDF, with the picture cards in a grid as a paper backup."></div>
+          </button>
+          <figcaption><strong>Print to A4</strong>A paper backup for the bath or the pool</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- Comparison -->
+  <section class="section" id="compare">
+    <div class="wrap">
+      <div class="center reveal">
+        <span class="eyebrow">How it compares</span>
+        <h2>The features you'd expect, without the cost</h2>
+        <p class="lead">AAC4Free covers what the leading paid AAC apps do, and adds a few things many of them don't.</p>
+      </div>
+      <div class="table-wrap reveal">
+        <table class="compare">
+          <thead>
+            <tr><th scope="col">Feature</th><th scope="col" class="us">AAC4Free</th><th scope="col">Typical paid app</th></tr>
+          </thead>
+          <tbody>
+            <tr><th scope="row">Price</th><td class="us">Free</td><td>£150 to £500</td></tr>
+            <tr><th scope="row">Core words and topic boards</th><td class="us"><span class="yes" aria-label="Yes"><svg><use href="#i-check"/></svg></span></td><td><span class="yes" aria-label="Yes"><svg><use href="#i-check"/></svg></span></td></tr>
+            <tr><th scope="row">Word levels that never move cards</th><td class="us"><span class="yes" aria-label="Yes"><svg><use href="#i-check"/></svg></span></td><td><span class="yes" aria-label="Yes"><svg><use href="#i-check"/></svg></span></td></tr>
+            <tr><th scope="row">Fitzgerald Key colours</th><td class="us"><span class="yes" aria-label="Yes"><svg><use href="#i-check"/></svg></span></td><td><span class="yes" aria-label="Yes"><svg><use href="#i-check"/></svg></span></td></tr>
+            <tr><th scope="row">Word forms and word-ending cards</th><td class="us"><span class="yes" aria-label="Yes"><svg><use href="#i-check"/></svg></span></td><td><span class="yes" aria-label="Yes"><svg><use href="#i-check"/></svg></span></td></tr>
+            <tr><th scope="row">Built-in switch scanning</th><td class="us"><span class="yes" aria-label="Yes"><svg><use href="#i-check"/></svg></span></td><td><span class="yes" aria-label="Yes"><svg><use href="#i-check"/></svg></span></td></tr>
+            <tr><th scope="row">Visual schedules</th><td class="us"><span class="yes" aria-label="Yes"><svg><use href="#i-check"/></svg></span></td><td class="some">Some</td></tr>
+            <tr><th scope="row">Visual scene displays</th><td class="us"><span class="yes" aria-label="Yes"><svg><use href="#i-check"/></svg></span></td><td class="some">Some</td></tr>
+            <tr><th scope="row">Several children on one iPad</th><td class="us"><span class="yes" aria-label="Yes"><svg><use href="#i-check"/></svg></span></td><td class="some">Some</td></tr>
+            <tr><th scope="row">Progress charts and word log export</th><td class="us"><span class="yes" aria-label="Yes"><svg><use href="#i-check"/></svg></span></td><td class="some">Some</td></tr>
+            <tr><th scope="row">Print boards</th><td class="us"><span class="yes" aria-label="Yes"><svg><use href="#i-check"/></svg></span></td><td class="some">Some</td></tr>
+            <tr><th scope="row">Open Board Format import and export</th><td class="us"><span class="yes" aria-label="Yes"><svg><use href="#i-check"/></svg></span></td><td class="some">Few</td></tr>
+            <tr><th scope="row">Works with no account or internet</th><td class="us"><span class="yes" aria-label="Yes"><svg><use href="#i-check"/></svg></span></td><td class="some">Varies</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- Devices + privacy -->
+  <section class="section white" id="privacy">
+    <div class="wrap">
+      <div class="center reveal">
+        <span class="eyebrow">Safe and practical</span>
+        <h2>Private, offline and ready for older iPads</h2>
+      </div>
+      <div class="two-col">
+        <div class="panel reveal">
+          <h3><svg aria-hidden="true"><use href="#i-shield"/></svg>Privacy</h3>
+          <p>AAC4Free collects no data at all, and its Apple privacy manifest says so.</p>
+          <ul class="privacy-list">
+            <li><svg aria-hidden="true"><use href="#i-check"/></svg><span><strong>No accounts, analytics, adverts or tracking</strong> of any kind.</span></li>
+            <li><svg aria-hidden="true"><use href="#i-check"/></svg><span><strong>Everything stays on the iPad:</strong> boards, photos, recordings and the word log.</span></li>
+            <li><svg aria-hidden="true"><use href="#i-check"/></svg><span><strong>Works offline.</strong> It only goes online if a grown-up searches the ARASAAC symbol library, and then sends only the search words.</span></li>
+            <li><svg aria-hidden="true"><use href="#i-check"/></svg><span><strong>Nothing leaves the iPad</strong> unless a grown-up chooses to share it.</span></li>
+          </ul>
+          <p style="margin:22px 0 0"><a href="https://im-that-guy-16.github.io/AAC4FREE-privacypolicy/privacy.html">Read the full privacy policy</a></p>
+        </div>
+        <div class="panel reveal">
+          <h3><svg aria-hidden="true"><use href="#i-ipad"/></svg>Supported iPads</h3>
+          <p>AAC4Free runs on <strong>iPadOS 15 and later</strong>, so older and second-hand iPads work too.</p>
+          <ul class="devices">
+            <li><span>iPad</span><span>5th generation (2017) and later</span></li>
+            <li><span>iPad mini</span><span>iPad mini 4 (2015) and later</span></li>
+            <li><span>iPad Air</span><span>iPad Air 2 (2014) and later</span></li>
+            <li><span>iPad Pro</span><span>All models</span></li>
+            <li><span>iPhone</span><span>Also supported, with a compact layout</span></li>
+          </ul>
+          <p style="margin:18px 0 0;color:var(--muted);font-size:.95rem">Works with VoiceOver, Switch Control and Guided Access, in portrait and landscape.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section" id="faq">
+    <div class="wrap">
+      <div class="center reveal">
+        <span class="eyebrow">Questions</span>
+        <h2>Frequently asked questions</h2>
+      </div>
+      <div class="faq">
+        <details class="reveal">
+          <summary>Is it really free? What's the catch?</summary>
+          <p>There's no catch. AAC4Free has no price, no adverts, no subscriptions and no in-app purchases, and every feature is included. The ARASAAC picture symbols it uses are licensed for non-commercial use only, so the app has to stay free.</p>
+        </details>
+        <details class="reveal">
+          <summary>When will it be on the App Store?</summary>
+          <p>AAC4Free is currently in pre-release testing. Before release it's being tested with families and speech and language therapists. If you'd like to be told when it's available, or to help test it, please <a href="#get-involved">get in touch</a>.</p>
+        </details>
+        <details class="reveal">
+          <summary>Who is it for?</summary>
+          <p>AAC4Free is made for autistic children and anyone who communicates with pictures, including children and adults with apraxia of speech, Down syndrome, cerebral palsy or other conditions that affect speech. It suits early communicators through to children building full sentences.</p>
+        </details>
+        <details class="reveal">
+          <summary>Can I move a child's boards from another AAC app?</summary>
+          <p>Yes. AAC4Free imports and exports boards in Open Board Format (.obf and .obz), used by CoughDrop, Grid and other AAC apps. Imported boards keep their pictures, sounds, colours and folder links.</p>
+        </details>
+        <details class="reveal">
+          <summary>Can school and home use the same boards?</summary>
+          <p>Yes. A grown-up can back up every board, photo and favourite in a single file and restore it on another iPad, for example to share a child's setup between home and school.</p>
+        </details>
+        <details class="reveal">
+          <summary>Does it need the internet?</summary>
+          <p>No. Speech, symbols and everything else work offline. The only time it goes online is if a grown-up chooses to search the full ARASAAC library of over 13,000 symbols, and chosen symbols are then saved on the iPad.</p>
+        </details>
+        <details class="reveal">
+          <summary>Is it suitable for children who can't use touch?</summary>
+          <p>Yes. AAC4Free has built-in switch scanning, with automatic or step scanning and optional auditory scanning. It works with switch interfaces that connect as Bluetooth keyboards, or the screen itself can act as a switch. It also supports Apple's Switch Control.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="section tight" id="get-involved">
+    <div class="wrap">
+      <div class="cta reveal">
+        <div class="cta-tiles" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+        <div>
+          <h2>Help us give more children a voice</h2>
+          <p>We're looking for speech and language therapists, schools and families to try AAC4Free before it launches, and to tell us what would make it better. We'd love to hear from you.</p>
+        </div>
+        <div class="cta-actions">
+          <a class="btn btn-light" href="mailto:localsparksonline@gmail.com?subject=AAC4Free"><svg aria-hidden="true"><use href="#i-mail"/></svg>Email us</a>
+          <a class="btn btn-outline-light" href="https://im-that-guy-16.github.io/AAC4FREE-privacypolicy/">Support page</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <a class="brand" href="#top"><img src="assets/img/icon.png" alt="" width="40" height="40">AAC4Free</a>
+        <p>A free talking app for children who communicate with pictures. Made so that every child can have a voice, whatever their family can afford.</p>
+      </div>
+      <div>
+        <h4>Explore</h4>
+        <ul>
+          <li><a href="#story">Our story</a></li>
+          <li><a href="#features">Features</a></li>
+          <li><a href="#professionals">For professionals</a></li>
+          <li><a href="#faq">FAQ</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="mailto:localsparksonline@gmail.com">localsparksonline@gmail.com</a></li>
+          <li><a href="https://im-that-guy-16.github.io/AAC4FREE-privacypolicy/">Support</a></li>
+          <li><a href="https://im-that-guy-16.github.io/AAC4FREE-privacypolicy/privacy.html">Privacy policy</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="credit">
+      <p>Picture symbols: the pictographic symbols used are the property of the Government of Aragón and were created by Sergio Palao for <a href="https://arasaac.org">ARASAAC</a>, which distributes them under the <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons BY-NC-SA 4.0</a> licence.</p>
+      <p>iPad and iPadOS are trademarks of Apple Inc.</p>
+    </div>
+  </div>
+</footer>
+
+<div class="lightbox" role="dialog" aria-modal="true" aria-label="Screenshot">
+  <button type="button" aria-label="Close"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+  <img alt="">
+</div>
+
+<script>
+  // Header shadow once scrolled
+  const header = document.querySelector('.header');
+  const onScroll = () => header.classList.toggle('scrolled', window.scrollY > 8);
+  onScroll();
+  window.addEventListener('scroll', onScroll, { passive: true });
+
+  // Mobile menu
+  const menuBtn = document.querySelector('.menu-btn');
+  const nav = document.getElementById('nav');
+  menuBtn.addEventListener('click', () => {
+    const open = nav.classList.toggle('open');
+    menuBtn.setAttribute('aria-expanded', open);
+  });
+  nav.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+    nav.classList.remove('open');
+    menuBtn.setAttribute('aria-expanded', 'false');
+  }));
+
+  // Reveal on scroll
+  const items = document.querySelectorAll('.reveal');
+  if ('IntersectionObserver' in window) {
+    const io = new IntersectionObserver(entries => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+    }, { rootMargin: '0px 0px -8% 0px', threshold: 0.08 });
+    items.forEach(el => io.observe(el));
+  } else {
+    items.forEach(el => el.classList.add('in'));
+  }
+
+  // Lightbox
+  const lb = document.querySelector('.lightbox');
+  const lbImg = lb.querySelector('img');
+  const lbClose = lb.querySelector('button');
+  let lastFocus = null;
+  const closeLb = () => { lb.classList.remove('open'); lastFocus && lastFocus.focus(); };
+  document.querySelectorAll('[data-full]').forEach(btn => btn.addEventListener('click', () => {
+    lastFocus = btn;
+    lbImg.src = btn.dataset.full;
+    lbImg.alt = btn.querySelector('img').alt;
+    lb.classList.add('open');
+    lbClose.focus();
+  }));
+  lbClose.addEventListener('click', closeLb);
+  lb.addEventListener('click', e => { if (e.target === lb) closeLb(); });
+  document.addEventListener('keydown', e => { if (e.key === 'Escape' && lb.classList.contains('open')) closeLb(); });
+</script>
+</body>
+</html>
